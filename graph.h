@@ -26,7 +26,7 @@
 
     int remove_less_weight(GRAFO* grafo);
 
-    int * adjacency_matrix(GRAFO* grafo);
+    int ** adjacency_matrix(GRAFO* grafo);
 
 
 
