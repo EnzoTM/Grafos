@@ -1,6 +1,5 @@
 #include "graph.h"
 
-
 struct grafo_{
     int** matriz_adjacencia;
     int tamanho;
@@ -14,8 +13,7 @@ GRAFO * MyGraph(int N){
         return NULL;
     }
 
-
-    grafo->tamanho = (int) malloc(sizeof(GRAFO));
+    grafo->tamanho = (int) malloc(sizeof(int));
 
     if(grafo->tamanho == NULL){
         free(grafo);
@@ -45,7 +43,9 @@ GRAFO * MyGraph(int N){
     return grafo;
 }
     
-int exist_edge(GRAFO* grafo, int v1, int v2);
+int exist_edge(GRAFO* grafo, int v1, int v2){
+
+}
 int ** get_adj_vertex(GRAFO* grafo, int posicao);
 int remove_edge(GRAFO* grafo, int v1, int v2);
 void print_info(GRAFO * grafo);
