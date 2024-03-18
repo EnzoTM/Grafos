@@ -25,6 +25,11 @@ GRAFO * MyGraph(int N){
 
     grafo->matriz_adjacencia = (int **)malloc(sizeof(int*));
 
+    for(int i = 0; i< grafo->tamanho; i++){
+        grafo->matriz_adjacencia[i] = (int*) malloc(sizeof(int));
+    }
+    
+
     if(grafo->matriz_adjacencia == NULL){
         free(grafo);
         free(grafo->tamanho);
@@ -50,7 +55,18 @@ int exist_edge(GRAFO* grafo, int v1, int v2){
         return ERRO;
     }
 
+    if(v1 < grafo->tamanho && v2 < grafo->tamanho){
+        if(grafo->matriz_adjacencia[v1][v2]){
+            return 1;
+        }
+
+        return 0;
+    }
+
+    return 0;
     
 
 }
-int ** get_adj_vertex(GRAFO* grafo, int posicao);
+int ** get_adj_vertex(GRAFO* grafo, int posicao){
+
+}
