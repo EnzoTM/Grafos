@@ -1,5 +1,7 @@
-#ifndef grafo
-    #define grafo
+#ifndef grafo_header
+    #define grafo_TAD
+    #include <stdio.h>
+    #include <stdlib.h>
 
     typedef struct grafo_ GRAFO;
 
