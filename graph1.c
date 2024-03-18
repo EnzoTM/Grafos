@@ -1,5 +1,13 @@
 #include "graph.h"
 
+
+// PARA ESSE TRABALHO ESTAMOS SUPONDO QUE O GRAFO PODE SER ORIENTADO E VALORADO COM INTUITO DE ABRANGER TODOS
+// OS POSSÍVEIS GRAFOS
+// Caso as linhas da matriz de adjacência seja igual às suas respectivas colunas, o grafo seria não orientado
+
+// Um elemento da linha i está ligado a coluna j
+
+
 struct grafo_{
     int** matriz_adjacencia;
     int tamanho;
@@ -28,7 +36,7 @@ GRAFO * MyGraph(int N){
     for(int i = 0; i< grafo->tamanho; i++){
         grafo->matriz_adjacencia[i] = (int*) malloc(sizeof(int));
     }
-    
+
 
     if(grafo->matriz_adjacencia == NULL){
         free(grafo);
@@ -67,6 +75,36 @@ int exist_edge(GRAFO* grafo, int v1, int v2){
     
 
 }
-int ** get_adj_vertex(GRAFO* grafo, int posicao){
+int ** get_adj_vertex(GRAFO* grafo, int posicao){ // Ver se esse cara funciona
+
+    if(grafo == NULL){
+        print("Erro: grafo inexistente");
+        return ERRO;
+    }
+
+    int * lista;
+
+    for(int i =0, j= 0; i<grafo->tamanho; i++){
+
+        if(i != posicao && grafo->matriz_adjacencia[posicao][i] == grafo->matriz_adjacencia[i][posicao] && grafo->matriz_adjacencia[posicao][i] != -1){ // se o grafo for orientado
+            lista[j] = grafo->matriz_adjacencia[posicao][i];
+            j++;
+        }else{
+            if(grafo->matriz_adjacencia[posicao][i] != -1){
+                lista[j] = grafo->matriz_adjacencia[posicao][i];
+                j++;
+            }
+            if(grafo->matriz_adjacencia[i][posicao] != -1){
+                lista[j] = grafo->matriz_adjacencia[i][posicao];
+                j++;
+            }
+        }
+
+
+    }
+    
+
+
+    return lista;
 
 }
