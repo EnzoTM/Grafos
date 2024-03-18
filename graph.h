@@ -22,7 +22,7 @@
 
     int remove_graph(GRAFO* grafo);
 
-    int add_edge(GRAFO* grafo, int v1, int v2);
+    int add_edge(GRAFO* grafo, int v1, int v2, int peso);
 
     int remove_less_weight(GRAFO* grafo);
 
