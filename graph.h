@@ -2,8 +2,11 @@
     #define grafo_TAD
     #include <stdio.h>
     #include <stdlib.h>
+    #define ERRO -9999999
 
     typedef struct grafo_ GRAFO;
+
+    
 
     GRAFO * MyGraph(int N);
 
