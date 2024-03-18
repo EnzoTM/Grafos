@@ -45,6 +45,13 @@ GRAFO * MyGraph(int N){
     
 int exist_edge(GRAFO* grafo, int v1, int v2){
 
+    if(grafo == NULL){
+        print("Erro: grafo inexistente");
+        return ERRO;
+    }
+
+    
+
 }
 int ** get_adj_vertex(GRAFO* grafo, int posicao);
 int remove_edge(GRAFO* grafo, int v1, int v2);
