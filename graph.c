@@ -3,10 +3,12 @@
 #include <stdlib.h>
 
 struct grafo_{
-    int* matriz_adjacencia;
+    int** matriz_adjacencia;
 };
 
-GRAFO * MyGraph(int N);
+GRAFO * MyGraph(int N){
+    GRAFO* grafo = (GRAFO* )
+}
     
 int exist_edge(GRAFO* grafo, int v1, int v2);
 int * get_adj_vertex(GRAFO* grafo, int posicao);
